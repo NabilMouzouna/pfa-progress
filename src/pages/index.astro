@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Timeline from '../components/Timeline.astro';
+
+const timelineItems = [
+  {
+    id: 'presentation',
+    title: 'Présentation Générale',
+    link: 'https://www.canva.com/design/DAGVQ0Q14V4/Ppin9u4VGIhffMpJV1q1fw/view?utm_content=DAGVQ0Q14V4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h664b003d9a',
+    status: 'completed',
+    description: 'Présentation du concept du projet, définition des objectifs, planification des étapes et répartition des tâches entre les membres de l\'équipe.'
+  },
+  {
+    id: 'devweb',
+    title: 'Développement Web & Base de Données',
+    link: 'https://www.canva.com/design/DAGgtPrxg2k/q33STjB_mstdkDfrRWUPQA/view?utm_content=DAGgtPrxg2k&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc7ac2d4961',
+    status: 'completed',
+    description: 'Développement de l\'application bancaire avec interface utilisateur et système d\'authentification. Mise en place de la base de données MySQL pour stocker les informations des utilisateurs et les transactions.',
+    branches: [
+      {
+        title: 'Branche 1: Application Bancaire',
+        items: [
+          'Développement frontend de l\'interface utilisateur',
+          'Mise en place du backend et des API',
+          'Configuration de la base de données MySQL',
+          'Implémentation des fonctionnalités bancaires de base'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'pentesting',
+    title: 'Pentesting sur Metasploitable 2',
+    link: 'https://www.canva.com/design/DAGhidjKtLk/UzU367I3TQfibVizsU97hA/view?utm_content=DAGhidjKtLk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5ae2928a48',
+    status: 'completed',
+    description: 'Exploration et maîtrise des outils de pentesting, en particulier netcat et scapy. Identification des vulnérabilités potentielles dans les applications web similaires.',
+    branches: [
+      {
+        title: 'Branche 2: Maîtrise des Outils de Pentesting',
+        items: [
+          'Installation et configuration de Metasploit',
+          'Apprentissage des fonctionnalités principales',
+          'Exercices pratiques sur des environnements contrôlés',
+          'Documentation des techniques et des vulnérabilités découvertes'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'defensive',
+    title: 'Configuration Défensive (Blue Team)',
+    status: 'in-progress',
+    description: 'Configuration de l\'environnement Ubuntu pour renforcer la sécurité de l\'application bancaire. Mise en place des outils et stratégies défensives.',
+    branches: [
+      {
+        title: 'Dérivé de la Branche 1 (Développement Web)',
+        items: [
+          'Installation et configuration d\'Ubuntu',
+          'Mise en place de pare-feu et règles de sécurité',
+          'Configuration de systèmes de détection d\'intrusion',
+          'Renforcement de la sécurité de la base de données',
+          'Implémentation de journalisation et surveillance'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'intrusion',
+    title: 'Tests d\'Intrusion (Red Team)',
+    status: 'not-started',
+    description: 'Réalisation de tests d\'intrusion sur l\'application bancaire en utilisant diverses techniques et outils comme Netcat et Scapy.',
+    branches: [
+      {
+        title: 'Dérivé de la Branche 2 (Pentesting)',
+        items: [
+          'Configuration de l\'environnement d\'attaque sur Kali linux',
+          'Utilisation de Netcat pour les tests de connexion',
+          'Implémentation de Scapy pour l\'analyse et la manipulation de paquets',
+          'Documentation des vulnérabilités trouvées',
+          'Proposition de solutions pour chaque vulnérabilité'
+        ]
+      }
+    ]
+  }
+];
+---
+
+<Layout title="README - Projet PFA">
+  <h1>Projet PFA - application de Cybersécurité d'un Applications Bancaires</h1>
+  
+  <section id="introduction">
+    <div class="section-title">
+      <h2>Introduction au Projet</h2>
+    </div>
+    <p>L'entreprise fictive propose un service de banque en ligne via l'application web Aabil, hébergée sur une machine virtuelle (VM) avec une base de données contenant des informations sensibles. Une équipe d'administration gère les accès et les services.</p>
+    
+    <p>Les objectifs principaux sont :</p>
+    <ul>
+      <li>Développer une application web bancaire avec une base de données</li>
+      <li>Maîtriser les outils de pentesting pour identifier les vulnérabilités</li>
+      <li>Attaquer l'application web pour obtenir un accès non autorisé aux données sensibles à l'aide de Scrapy et Netcat.</li>
+      <li>Sécuriser le réseau et les services contre ces attaques en utilisant Suricata, Splunk et OpenVAS.</li>
+    </ul>
+  </section>
+  
+  <section id="roadmap">
+    <div class="section-title">
+      <h2>Feuille de Route du Projet</h2>
+    </div>
+    
+    <Timeline items={timelineItems} />
+  </section>
+  
+  <footer>
+    <p><strong>Note pour le professeur:</strong> Ce README sera mis à jour régulièrement pour refléter l'avancement du projet. Les sections marquées "En cours" ou "Pas encore commencé" seront complétées au fur et à mesure de notre progression.</p>
+  </footer>
+</Layout> 
